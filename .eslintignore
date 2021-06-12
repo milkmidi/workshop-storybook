@@ -3,5 +3,5 @@ dist
 node_modules
 public
 !.eslintrc.js
-!.storybook
+!.storybook/*
 !.storybook/webpack.config.js

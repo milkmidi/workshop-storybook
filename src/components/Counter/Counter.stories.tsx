@@ -10,12 +10,6 @@ export default {
   title: 'Counter',
   component: Counter,
   argTypes: {
-    // foo is the property we want to remove from the UI
-    onChagne: {
-      table: {
-        disable: true,
-      },
-    },
     list: {
       options: ['React', 'Vue', 'Angular'],
       type: 'select',

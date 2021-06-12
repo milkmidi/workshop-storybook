@@ -11,6 +11,9 @@ export type CounterProps = {
    */
   onChange?: (count:number)=>void;
 
+  /**
+   * this is demo code, Yes, demo only.
+   */
   list?: string[];
   /**
    * this is background-color
@@ -53,10 +56,14 @@ const Counter:React.FC<CounterProps> = (props) => {
         onClick={atClick}
       >
         increment
-
       </button>
     </div>
   );
+};
+
+Counter.defaultProps = {
+  defaultCount: 0,
+  backgroundColor: 'white',
 };
 
 export default Counter;

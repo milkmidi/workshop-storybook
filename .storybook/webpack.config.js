@@ -20,10 +20,16 @@ module.exports = async ({ config, mode }) => {
 
   Object.assign(config.resolve.alias, alias);
 
+  config.module.rules.push({
+    test: /\.scss$/,
+    use: ['style-loader', 'css-loader', 'sass-loader'],
+    include: path.resolve(__dirname, '../'),
+  });
+
   config.plugins.push(
     new webpack.DefinePlugin({
       'process.env': {
-        IS_DEV: isDevelopment,
+        __DEV__: isDevelopment,
         NODE_ENV: JSON.stringify(process.env.NODE_ENV),
         APP_ENV: JSON.stringify(process.env.APP_ENV),
       },
