@@ -1,0 +1,57 @@
+
+<div id="hover-tip"></div>
+
+<style>
+  #over-tip {
+    position: absolute;
+    border: 2px solid #2ed573;
+    pointer-events: none;
+    box-shadow: 0 0 10px 0px black;
+    background-color:rgba(255,255,255,0.2);
+  }
+</style>
+
+<script>
+  setTimeout(() => {
+    console.log('hi');
+
+    const overTipElement = document.getElementById('hover-tip');
+
+    const showTipWithTextContent = (textContent) => {
+      const element = document.querySelector(`*[data-edit-id="${textContent}"]`);
+      if (element) {
+        const clientRect = element.getBoundingClientRect();
+        const {
+          left, top, width, height
+        } = clientReact;
+        overTipElement.style.left = left + 'px';
+        overTipElement.style.top = top + 'px';
+        overTipElement.style.width = width + 'px';
+        overTipElement.style.height = height + 'px';
+        overTipElement.style.display = 'block';
+      } else {
+        overTipElement.style.display = 'none';
+      }
+    }
+
+    const docBlockBody = window.parent.document.querySelector('.docblock-argstable-body');
+    console.log('docBlockBody', docBlockBody);
+    if (!docBlockBody) {
+      return;
+    }
+
+    docBlockBody.children.forEach((element) => {
+      console.log(element);
+      element.addEventListener('mouseenter', (e) => {
+        const span = element.children[0].querySelector('span');
+        console.log(span.textContent);
+        showTipWithTextContent(span.textContent);
+        // const { textContent } = element.children[0].querySelector('span');
+        // console.log(textContext);
+      });
+    });
+  }, 2000);
+
+</script>
+
+

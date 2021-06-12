@@ -47,7 +47,14 @@ const Counter:React.FC<CounterProps> = (props) => {
     <div>
       <h2>{count}</h2>
       <h2>{JSON.stringify(list)}</h2>
-      <button className={buttonStyle} onClick={atClick}>increment</button>
+      <button
+        data-edit-id="backgroundColor"
+        className={buttonStyle}
+        onClick={atClick}
+      >
+        increment
+
+      </button>
     </div>
   );
 };
