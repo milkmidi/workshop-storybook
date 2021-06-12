@@ -1,0 +1,13 @@
+import React from 'react';
+import {
+  render,
+  // fireEvent,
+} from '@testing-library/react';
+import {{ properCase name }} from '.';
+
+describe.skip('<{{ properCase name }} />', () => {
+  test('should render {{ properCase name }}', () => {
+    const { container } = render(<{{ properCase name }} />);
+    expect(container.querySelector('.{{dashCase name}}-component')).toBeInTheDocument();
+  });
+});

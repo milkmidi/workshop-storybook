@@ -15,19 +15,20 @@ module.exports = {
         return 'The name is required';
       },
     },
+    {
+      type: 'list',
+      name: 'style',
+      message: 'What style system?',
+      default: 'scss',
+      choices: ['scss', 'emotion'],
+    },
   ],
   actions: (data) => {
-    const actions = [
+    const commonActions = [
       {
         type: 'add',
         path: '../../src/components/{{properCase name}}/index.ts',
-        templateFile: 'components/index.js.hbs',
-        abortOnFail: true,
-      },
-      {
-        type: 'add',
-        path: '../../src/components/{{properCase name}}/{{properCase name}}.tsx',
-        templateFile: 'components/stateless.js.hbs',
+        templateFile: 'components/index.hbs',
         abortOnFail: true,
       },
       {
@@ -36,18 +37,39 @@ module.exports = {
         templateFile: 'components/stories.hbs',
         abortOnFail: true,
       },
+
       {
         type: 'add',
         path: '../../src/components/{{properCase name}}/{{properCase name}}.test.tsx',
         templateFile: 'components/test.hbs',
         abortOnFail: true,
       },
+    ];
+    const scssActions = [
+      {
+        type: 'add',
+        path: '../../src/components/{{properCase name}}/{{properCase name}}.tsx',
+        templateFile: 'components/component.hbs',
+        abortOnFail: true,
+      },
       {
         type: 'add',
         path: '../../src/components/{{properCase name}}/{{properCase name}}.scss',
-        templateFile: 'components/style.scss.hbs',
+        templateFile: 'components/style.hbs',
         abortOnFail: true,
       },
+    ];
+    const emotionAction = [
+      {
+        type: 'add',
+        path: '../../src/components/{{properCase name}}/{{properCase name}}.tsx',
+        templateFile: 'components/component-emotion.hbs',
+        abortOnFail: true,
+      },
+    ];
+    const actions = [
+      ...commonActions,
+      ...(data.style === 'scss' ? scssActions : emotionAction),
     ];
     return actions;
   },

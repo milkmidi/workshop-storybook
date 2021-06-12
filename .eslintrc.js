@@ -34,6 +34,7 @@ module.exports = {
   },
   rules: {
     '@typescript-eslint/no-var-requires': 0,
+    'arrow-body-style': 0,
     'global-require': 0,
     'import/no-extraneous-dependencies': 0,
     'import/extensions': [

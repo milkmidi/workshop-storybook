@@ -10,7 +10,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "plop": "plop --plopfile ./internal/plop/index.js"
+    "plop": "plop --plopfile ./internal/plop/plopfile.js"
   },
   "browserslist": {
     "production": [

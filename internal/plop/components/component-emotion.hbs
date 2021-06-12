@@ -1,0 +1,27 @@
+import * as React from 'react';
+import { css, cx } from '@emotion/css';
+
+// https://www.saltycrane.com/cheat-sheets/typescript/react/latest/#react
+export type {{ properCase name }}Props = React.HTMLAttributes<HTMLElement> & {
+  className?: string;
+};
+
+const rootStyle = css`
+`;
+
+const {{ properCase name }}: React.FC<{{ properCase name }}Props> = (props) => {
+  const {
+    className,
+  } = props;
+
+  return (
+    <div
+      data-component="{{dashCase name}}"
+      className={cx(rootStyle, className)}
+    >
+      hi, {{ properCase name }}
+    </div>
+  );
+};
+
+export default React.memo({{ properCase name }});
