@@ -1,0 +1,37 @@
+import * as React from 'react';
+import { css } from '@emotion/css';
+import { Story, Meta } from '@storybook/react';
+import { actions } from '@storybook/addon-actions';
+
+import {{ properCase name }} from '.';
+import type { {{ properCase name }}Props } from '.';
+
+const action = actions();
+
+export default {
+  title: '{{ properCase name }}',
+  component: {{ properCase name }},
+  parameters: { controls: { sort: 'requiredFirst' } },
+  // https://storybook.js.org/docs/react/essentials/controls#annotation
+  argTypes: {
+  },
+} as Meta;
+
+const Template:Story<{{ properCase name }}Props> = (args:Partial<{{ properCase name }}Props>) => {
+  return (
+    <div className={css`
+      max-width: 640px;
+      padding: 32px 40px;
+      background-color: white;
+    `}
+    >
+      <{{ properCase name }}
+        {...args}
+        {...action}
+      />
+    </div>
+  );
+}
+
+export const Basic = Template.bind({});
+Basic.args = {};
