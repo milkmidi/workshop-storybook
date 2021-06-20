@@ -10,7 +10,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "plop": "plop --plopfile ./internal/plop/plopfile.js"
+    "plop": "plop --plopfile ./internal/plop/plopfile.js",
+    "chromatic": "npx chromatic --project-token=504f2c70b64f"
   },
   "browserslist": {
     "production": [
@@ -54,6 +55,7 @@
     "@storybook/react": "^6.2.9",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
+    "chromatic": "^5.9.2",
     "eslint": "^7.25.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-airbnb-typescript": "^12.3.1",

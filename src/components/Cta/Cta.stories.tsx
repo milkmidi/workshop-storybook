@@ -35,3 +35,8 @@ const Template:Story<CtaProps> = (args:Partial<CtaProps>) => {
 
 export const Basic = Template.bind({});
 Basic.args = {};
+
+export const VariantInfo = Template.bind({});
+VariantInfo.args = {
+  variant: 'info',
+};

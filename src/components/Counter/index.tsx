@@ -48,6 +48,7 @@ const Counter:React.FC<CounterProps> = (props) => {
   `;
   return (
     <div>
+      <h3>hi, CounterButton</h3>
       <h2>{count}</h2>
       <h2>{JSON.stringify(list)}</h2>
       <button
