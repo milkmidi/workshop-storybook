@@ -3,7 +3,7 @@ import { css, cx } from '@emotion/css';
 import TodoForm from '../TodoForm';
 import TodoItem from '../TodoItem';
 
-type TodoListData = {
+type TodoData = {
   id: string;
   text: string;
   done: boolean;
@@ -11,7 +11,7 @@ type TodoListData = {
 
 export type TodoListProps = {
   className?: string;
-  todoData?: TodoListData[];
+  todoData?: TodoData[];
 };
 
 const rootStyle = css`
@@ -23,10 +23,10 @@ const TodoList: React.FC<TodoListProps> = (props) => {
     todoData = [],
   } = props;
 
-  const [list, setList] = React.useState<TodoListData[]>(todoData);
+  const [list, setList] = React.useState<TodoData[]>(todoData);
 
   const atSubmit = React.useCallback((text:string) => {
-    setList((prevList:TodoListData[]) => {
+    setList((prevList:TodoData[]) => {
       return prevList.concat({
         id: `${+new Date()}`,
         text,
@@ -36,7 +36,7 @@ const TodoList: React.FC<TodoListProps> = (props) => {
   }, []);
 
   const atToggleTodo = React.useCallback((id:string) => {
-    setList((prevList:TodoListData[]) => {
+    setList((prevList:TodoData[]) => {
       return prevList.map((todo) => {
         if (todo.id === id) {
           return {

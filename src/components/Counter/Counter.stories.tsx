@@ -10,7 +10,7 @@ export default {
   title: 'Counter',
   component: Counter,
   argTypes: {
-    list: {
+    buttonName: {
       options: ['React', 'Vue', 'Angular'],
       type: 'select',
     },

@@ -1,5 +1,4 @@
 import { useState, useCallback, useEffect } from 'react';
-import { css } from '@emotion/css';
 
 export type CounterProps = {
   /**
@@ -14,7 +13,7 @@ export type CounterProps = {
   /**
    * this is demo code, Yes, demo only.
    */
-  list?: string[];
+  buttonName?: string;
   /**
    * this is background-color
    */
@@ -25,7 +24,7 @@ const Counter:React.FC<CounterProps> = (props) => {
   const {
     defaultCount = 0,
     onChange,
-    list = [],
+    buttonName = 'Button',
     backgroundColor = 'white',
   } = props;
 
@@ -42,21 +41,16 @@ const Counter:React.FC<CounterProps> = (props) => {
       return newCount;
     });
   }, [onChange]);
-
-  const buttonStyle = css`
-    background-color: ${backgroundColor};
-  `;
   return (
     <div>
-      <h3>hi, CounterButton</h3>
       <h2>{count}</h2>
-      <h2>{JSON.stringify(list)}</h2>
       <button
-        data-edit-id="backgroundColor"
-        className={buttonStyle}
+        style={{
+          backgroundColor,
+        }}
         onClick={atClick}
       >
-        increment
+        {buttonName}
       </button>
     </div>
   );

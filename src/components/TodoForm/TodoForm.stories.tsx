@@ -19,12 +19,7 @@ export default {
 
 const Template:Story<TodoFormProps> = (args:Partial<TodoFormProps>) => {
   return (
-    <div className={css`
-      max-width: 640px;
-      padding: 32px 40px;
-      background-color: white;
-    `}
-    >
+    <div className={css``}>
       <TodoForm
         {...args}
         {...action}
