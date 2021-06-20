@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import Switch from './Switch';
+
+<Meta title="MDX/Switch" component={Switch} />
+
+# Switch
+
+With `MDX`, we can define a story for `Checkbox` right in the middle of our Markdown documentation.
+https://storybook.js.org/docs/riot/api/mdx
+## 這裡可以寫 markdown
+
+
+<Canvas>
+  <Story name="default">
+    <Switch />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="checked">
+    <Switch checked />
+  </Story>
+</Canvas>
