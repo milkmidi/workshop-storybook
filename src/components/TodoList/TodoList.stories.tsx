@@ -3,14 +3,14 @@ import { css } from '@emotion/css';
 import { Story, Meta } from '@storybook/react';
 import { actions } from '@storybook/addon-actions';
 
-import {{ properCase name }} from '.';
-import type { {{ properCase name }}Props } from '.';
+import TodoList from '.';
+import type { TodoListProps } from '.';
 
 const action = actions();
 
 export default {
-  title: '{{ properCase name }}',
-  component: {{ properCase name }},
+  title: 'TodoList/TodoList',
+  component: TodoList,
   parameters: { controls: { sort: 'requiredFirst' } },
   // https://storybook.js.org/docs/react/essentials/controls#annotation
   argTypes: {
@@ -20,10 +20,10 @@ export default {
   },
 } as Meta;
 
-const Template:Story<{{ properCase name }}Props> = (args:Partial<{{ properCase name }}Props>) => {
+const Template:Story<TodoListProps> = (args:Partial<TodoListProps>) => {
   return (
     <div className={css``}>
-      <{{ properCase name }}
+      <TodoList
         {...args}
         {...action}
       />
@@ -33,3 +33,19 @@ const Template:Story<{{ properCase name }}Props> = (args:Partial<{{ properCase n
 
 export const Basic = Template.bind({});
 Basic.args = {};
+
+export const WithData = Template.bind({});
+WithData.args = {
+  todoData: [
+    {
+      id: 'fakeId',
+      done: false,
+      text: 'React',
+    },
+    {
+      id: 'fakeId2',
+      done: true,
+      text: 'Javascript',
+    },
+  ],
+};

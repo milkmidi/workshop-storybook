@@ -3,27 +3,27 @@ import { css } from '@emotion/css';
 import { Story, Meta } from '@storybook/react';
 import { actions } from '@storybook/addon-actions';
 
-import {{ properCase name }} from '.';
-import type { {{ properCase name }}Props } from '.';
+import TodoItem from '.';
+import type { TodoItemProps } from '.';
 
-const action = actions();
+const action = actions('onToggleTodo');
 
 export default {
-  title: '{{ properCase name }}',
-  component: {{ properCase name }},
+  title: 'TodoList/TodoItem',
+  component: TodoItem,
   parameters: { controls: { sort: 'requiredFirst' } },
   // https://storybook.js.org/docs/react/essentials/controls#annotation
   argTypes: {
-    className: {
-      control: false,
-    },
   },
 } as Meta;
 
-const Template:Story<{{ properCase name }}Props> = (args:Partial<{{ properCase name }}Props>) => {
+const Template:Story<TodoItemProps> = (args:Partial<TodoItemProps>) => {
   return (
     <div className={css``}>
-      <{{ properCase name }}
+      <TodoItem
+        id="fakeId"
+        text="TodoItem"
+        done={false}
         {...args}
         {...action}
       />
@@ -33,3 +33,8 @@ const Template:Story<{{ properCase name }}Props> = (args:Partial<{{ properCase n
 
 export const Basic = Template.bind({});
 Basic.args = {};
+
+export const Done = Template.bind({});
+Done.args = {
+  done: true,
+};

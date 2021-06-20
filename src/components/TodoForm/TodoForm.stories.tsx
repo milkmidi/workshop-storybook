@@ -3,27 +3,24 @@ import { css } from '@emotion/css';
 import { Story, Meta } from '@storybook/react';
 import { actions } from '@storybook/addon-actions';
 
-import {{ properCase name }} from '.';
-import type { {{ properCase name }}Props } from '.';
+import TodoForm from '.';
+import type { TodoFormProps } from '.';
 
-const action = actions();
+const action = actions('onSubmit');
 
 export default {
-  title: '{{ properCase name }}',
-  component: {{ properCase name }},
+  title: 'TodoList/TodoForm',
+  component: TodoForm,
   parameters: { controls: { sort: 'requiredFirst' } },
   // https://storybook.js.org/docs/react/essentials/controls#annotation
   argTypes: {
-    className: {
-      control: false,
-    },
   },
 } as Meta;
 
-const Template:Story<{{ properCase name }}Props> = (args:Partial<{{ properCase name }}Props>) => {
+const Template:Story<TodoFormProps> = (args:Partial<TodoFormProps>) => {
   return (
     <div className={css``}>
-      <{{ properCase name }}
+      <TodoForm
         {...args}
         {...action}
       />
@@ -33,3 +30,8 @@ const Template:Story<{{ properCase name }}Props> = (args:Partial<{{ properCase n
 
 export const Basic = Template.bind({});
 Basic.args = {};
+
+export const DefaultValue = Template.bind({});
+DefaultValue.args = {
+  value: 'hi, 9527',
+};
