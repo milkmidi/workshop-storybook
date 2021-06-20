@@ -24,6 +24,7 @@ module.exports = {
     },
   ],
   actions: (data) => {
+    // https://plopjs.com/documentation/#case-modifiers
     const commonActions = [
       {
         type: 'add',

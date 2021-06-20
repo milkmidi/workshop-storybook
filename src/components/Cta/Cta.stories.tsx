@@ -1,16 +1,15 @@
 // import * as React from 'react';
-import { css } from '@emotion/css';
 import { Story, Meta } from '@storybook/react';
 import { actions } from '@storybook/addon-actions';
 
-import {{ properCase name }} from '.';
-import type { {{ properCase name }}Props } from '.';
+import Cta from '.';
+import type { CtaProps } from '.';
 
 const action = actions();
 
 export default {
-  title: '{{ properCase name }}',
-  component: {{ properCase name }},
+  title: 'Cta',
+  component: Cta,
   parameters: { controls: { sort: 'requiredFirst' } },
   // https://storybook.js.org/docs/react/essentials/controls#annotation
   argTypes: {
@@ -20,13 +19,16 @@ export default {
   },
 } as Meta;
 
-const Template:Story<{{ properCase name }}Props> = (args:Partial<{{ properCase name }}Props>) => {
+const Template:Story<CtaProps> = (args:Partial<CtaProps>) => {
   return (
-    <div className={css``}>
-      <{{ properCase name }}
+    <div>
+      <Cta
+        aria-label="button"
         {...args}
         {...action}
-      />
+      >
+        CTA
+      </Cta>
     </div>
   );
 };
