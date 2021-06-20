@@ -1,10 +1,7 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-
 import * as React from 'react';
 import { css } from '@emotion/css';
-import CloseButton from './CloseButton';
+// import CloseButton from './CloseButton';
 
 export type TodoFormProps = {
   /**
@@ -84,9 +81,10 @@ const TodoForm: React.FC<TodoFormProps> = (props) => {
     }
   }, [onSubmit, value]);
 
-  const atCloseButtonClick = React.useCallback(() => {
+  // TODO
+  /* const atCloseButtonClick = React.useCallback(() => {
     setValue('');
-  }, []);
+  }, []); */
 
   return (
     <div
