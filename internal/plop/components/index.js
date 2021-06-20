@@ -38,13 +38,12 @@ module.exports = {
         templateFile: 'components/stories.hbs',
         abortOnFail: true,
       },
-
-      {
+      /* {
         type: 'add',
         path: '../../src/components/{{properCase name}}/{{properCase name}}.test.tsx',
         templateFile: 'components/test.hbs',
         abortOnFail: true,
-      },
+      }, */
     ];
     const scssActions = [
       {
