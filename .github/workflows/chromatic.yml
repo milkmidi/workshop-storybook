@@ -8,6 +8,7 @@ jobs:
   build:
     name: chromatic eploy
     env:
+      CHROMATIC_TOKEN   : ${{secrets.CHROMATIC_TOKEN}}
     runs-on: ubuntu-latest
     strategy:
       matrix:
