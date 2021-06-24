@@ -17,6 +17,8 @@ export type TodoItemProps = {
    */
   id: string;
   onToggleTodo: (id:string)=> void;
+
+  onDeleteTodo: (id:string)=> void;
 };
 
 const rootStyle = css`
@@ -68,6 +70,7 @@ const TodoItem: React.FC<TodoItemProps> = (props) => {
     id,
     done,
     onToggleTodo,
+    onDeleteTodo, // TODO
     text,
   } = props;
 
@@ -79,6 +82,7 @@ const TodoItem: React.FC<TodoItemProps> = (props) => {
     >
       <span className="checkmark" />
       {text}
+      {/* implement delete button */}
     </div>
   );
 };
