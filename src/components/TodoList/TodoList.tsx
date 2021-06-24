@@ -49,6 +49,15 @@ const TodoList: React.FC<TodoListProps> = (props) => {
     });
   }, []);
 
+  // TODO
+  const atDeleteTodo = React.useCallback((id:string) => {
+    setList((prevList:TodoData[]) => {
+      return prevList.filter((todo) => {
+        return todo.id !== id;
+      });
+    });
+  }, []);
+
   return (
     <div
       data-component="todo-list"
@@ -64,6 +73,7 @@ const TodoList: React.FC<TodoListProps> = (props) => {
               text={todo.text}
               done={todo.done}
               onToggleTodo={atToggleTodo}
+              onDeleteTodo={atDeleteTodo}
             />
           );
         })
